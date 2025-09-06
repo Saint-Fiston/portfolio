@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Server</title>
+  
+</head>
+<body>
+  <header id="header">
+    <nav class="navbar">
+      <ul class="nav-items">
+        <li class="link-item"><a href="#header">HOME</a></li>
+        <li class="link-item"><a href="#main">SKILLS</a></li>
+        <li class="link-item"><a href="#projects">PROJECTS</a></li>
+        <li class="link-item"><a href="#about">ABOUT</a></li>
+        <li class="link-item"><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+    <section class="nav-text">
+      <div class="profile-image">
+        <img src="..\images\fiston.jpeg" alt="">
+      </div>
+      <div class="text">
+        <h4>HI I'M <strong><a href="#about">FISTON</a></strong></h4>
+        <h1 class="typewriter">
+          <span class="text1">WELCOME</span>
+          <span class="text2">TO MY TECH</span>
+          <span class="text3">WORLD</span>
+        </h1>
+        <p>
+          <span>Transforming data into decisions— <strong>full-stack developer</strong> today, <strong>data scientist</strong></span> 
+          <span>tomorrow. Explore my journey, skills, and the code behind my ambition.</span>
+        </p>
+      </div>
+      <div class="scroll-container">
+        <button class="scroll-button" onclick="scrollDown()" aria-label="Scroll down"></button>
+      </div>
+    </section>
+    
+    <!-- SKILL -->
+    <div class="heading">
+      <h1>SKILLS</h1>
+    </div>
+    <section id="main">
+      
+      <div class="skills" >
+        <div class="skill1">
+          <div class="card">
+            <div class="mac-header">
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
+            </div>
+            <span class="card-title">Python</span>
+            <p class="card-description">
+              The code below has an error or is missing something. Click EDIT to fix it.
+            </p>
+            <div class="in-card" data-id="0">
+              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <div class="code-editor">
+                <pre><code>def is_even(number):
+    if number % 2 = 0:
+        return True
+    else:
+        return False
+</code></pre>
+              </div>
+              <p class="feedback"></p>
+            </div>
+          </div>
+        </div>
+        <div class="skill2">
+          <div class="card">
+            <div class="mac-header">
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
+            </div>
+            <span class="card-title">CSS</span>
+            <p class="card-description">
+              The code below has an error or is missing something. Click EDIT to fix it.
+            </p>
+            <div class="in-card" data-id="1">
+              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <div class="code-editor">
+                <pre><code>body {
+    background-color: lightblue
+    font-family: Arial, sans-serif;
+}</code></pre>
+              </div>
+              <p class="feedback"></p>
+            </div>
+          </div>
+        </div>
+        <div class="skill3">
+          <div class="card">
+            <div class="mac-header">
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
+            </div>
+            <span class="card-title">SQL</span>
+            <p class="card-description">
+              The code below has an error or is missing something. Click EDIT to fix it.
+            </p>
+            <div class="in-card" data-id="2">
+              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <div class="code-editor">
+                <pre><code>SELECT first_name last_name
+FROM users
+WHERE country = 'South Africa';</code></pre>
+              </div>
+              <p class="feedback"></p>
+            </div>
+          </div>
+        </div>
+        <div class="skill4">
+          <div class="card">
+            <div class="mac-header">
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
+            </div>
+            <span class="card-title">Javascript</span>
+            <p class="card-description">
+              The code below has an error or is missing something. Click EDIT to fix it.
+            </p>
+            <div class="in-card" data-id="3">
+              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <div class="code-editor">
+                <pre><code>function checkNumber(num) {
+    if (num === 10) {
+        print "It's ten!";
+    } else {
+        return "It's not ten.";
+    }
+}</code></pre>
+              </div>
+              <p class="feedback"></p>
+            </div>
+          </div>
+        </div>
+        <div class="skill5">
+          <div class="card">
+            <div class="mac-header">
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
+            </div>
+            <span class="card-title">React(jsx)</span>
+            <p class="card-description">
+              The code below has an error or is missing something. Click EDIT to fix it.
+            </p>
+            <div class="in-card" data-id="4">
+              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <div class="code-editor">
+                <pre><code>function WelcomeComponent() {
+    return (
+        &lt;h1&gt;Hello World&lt;/h1&gt;
+        &lt;p&gt;Welcome to the app.&lt;/p&gt;
+    );
+}</code></pre>
+              </div>
+              <p class="feedback"></p>
+            </div>
+          </div>
+        </div>
+        <div class="skill6">
+          <div class="card">
+            <div class="mac-header">
+              <span class="red"></span>
+              <span class="yellow"></span>
+              <span class="green"></span>
+            </div>
+            <span class="card-title">Javascript Code Preview</span>
+            <p class="card-description" >
+              The code below has an error or is missing something. Click EDIT to fix it.
+            </p>
+            <div class="in-card" data-id="5">
+              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <div class="code-editor">
+                <pre><code>&lt;h1&gt; Hello World &lt;/h1&gt;</code></pre>
+              </div>
+              <p class="feedback"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+
+    </section>
+    <section id="about">
+
+    </section>
+    <section>
+
+    </section>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -3,23 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dev Server</title>
-  
+  <link rel="stylesheet" href="style.css">
+  <title>Fiston Kilele</title>
 </head>
 <body>
+  <!-- PAGE LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div id="ghost">
+        <div id="red">
+          <div id="pupil"></div>
+          <div id="pupil1"></div>
+          <div id="eye"></div>
+          <div id="eye1"></div>
+          <div id="top0"></div>
+          <div id="top1"></div>
+          <div id="top2"></div>
+          <div id="top3"></div>
+          <div id="top4"></div>
+          <div id="st0"></div>
+          <div id="st1"></div>
+          <div id="st2"></div>
+          <div id="st3"></div>
+          <div id="st4"></div>
+          <div id="st5"></div>
+          <div id="an1"></div>
+          <div id="an2"></div>
+          <div id="an3"></div>
+          <div id="an4"></div>
+          <div id="an5"></div>
+          <div id="an6"></div>
+          <div id="an7"></div>
+          <div id="an8"></div>
+          <div id="an9"></div>
+          <div id="an10"></div>
+          <div id="an11"></div>
+          <div id="an12"></div>
+          <div id="an13"></div>
+          <div id="an14"></div>
+          <div id="an15"></div>
+          <div id="an16"></div>
+          <div id="an17"></div>
+          <div id="an18"></div>
+        </div>
+        <div id="shadow"></div>
+      </div>
+      <p class="loader-text">Loading<span class="loader-dots"></span></p>
+    </div>
+  </div>
+
   <header id="header">
     <nav class="navbar">
       <ul class="nav-items">
-        <li class="link-item"><a href="#header">HOME</a></li>
+        <li class="link-item"><a href="index.html">HOME</a></li>
         <li class="link-item"><a href="#main">SKILLS</a></li>
-        <li class="link-item"><a href="#projects">PROJECTS</a></li>
-        <li class="link-item"><a href="#about">ABOUT</a></li>
-        <li class="link-item"><a href="#">CONTACT</a></li>
+        <li class="link-item"><a href="#certificates">CERTIFICATES</a></li>
+        <li class="link-item"><a href="projects.html">PROJECTS</a></li>
+        <li class="link-item"><a href="about.html">ABOUT</a></li>
+        <li class="link-item"><a href="about.html#contacts">CONTACT</a></li>
       </ul>
     </nav>
-    <section class="nav-text">
+
+    <section class="nav-text" id="home">
       <div class="profile-image">
-        <img src="..\images\fiston.jpeg" alt="">
+        <img src="images/fiston.jpeg" alt="Fiston Kilele">
       </div>
       <div class="text">
         <h4>HI I'M <strong><a href="#about">FISTON</a></strong></h4>
@@ -29,22 +76,124 @@
           <span class="text3">WORLD</span>
         </h1>
         <p>
-          <span>Transforming data into decisions— <strong>full-stack developer</strong> today, <strong>data scientist</strong></span> 
-          <span>tomorrow. Explore my journey, skills, and the code behind my ambition.</span>
+          <span>Transforming data into decisions— combining the logic of a <strong>Data Scientist</strong> with the build-capabilities of a</span> 
+          <span><strong>Full-Stack Developer.</strong> Explore my dual-expertise in building robust apps and predictive models.</span>
         </p>
       </div>
+
+      <!-- ========== PROJECTS SLIDESHOW ========== -->
+      <div class="slideshow-container">
+        <div class="slideshow-track">
+          <!-- Slide 1 -->
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#hotel-booking-details">
+                <img src="images2/hotel.png" alt="HOTEL BOOKING SYSTEM">
+                <div class="slide-label">HOTEL BOOKING SYSTEM</div>
+              </a>
+              
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#aea-details">
+                <img src="images2/afri.png" alt="AEA">
+                <div class="slide-label">AEA</div>
+              </a>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="">
+                <img src="images2/prof.png" alt="PORTFOLIO">
+                <div class="slide-label">PORTFOLIO</div>
+              </a>
+              
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#streaming-details">
+                <img src="images2/webrtc2.png" alt="LIVE WEB STREAMING FEATURE">
+                <div class="slide-label">LIVE STREAMING FEATURE</div>
+              </a>
+              
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#excel-details">
+                <img src="images2/excel2.png" alt="EXCEL AUTOMATION">
+                <div class="slide-label">EXCEL AUTOMATION</div>
+              </a>
+            </div>
+          </div>
+          <!-- Slide 6 -->
+          <div class="slide-item">
+            <div class="slide-frame">
+              <img src="images2/project6.jpg" alt="Chat Application">
+              <div class="slide-label">Chat Application</div>
+            </div>
+          </div>
+          
+          <!-- Duplicate slides for seamless infinite loop -->
+          <div class="slide-item">
+            <div class="slide-frame">
+              <img src="images2/project1.jpg" alt="E-Commerce App">
+              <div class="slide-label">E-Commerce App</div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="slide-frame">
+              <img src="images2/project2.jpg" alt="Portfolio Site">
+              <div class="slide-label">Portfolio Site</div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="slide-frame">
+              <img src="images2/project3.jpg" alt="Task Manager">
+              <div class="slide-label">Task Manager</div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="slide-frame">
+              <img src="images2/project4.jpg" alt="Weather App">
+              <div class="slide-label">Weather App</div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="slide-frame">
+              <img src="images2/project5.jpg" alt="Fitness Tracker">
+              <div class="slide-label">Fitness Tracker</div>
+            </div>
+          </div>
+          <div class="slide-item">
+            <div class="slide-frame">
+              <img src="images2/project6.jpg" alt="Chat Application">
+              <div class="slide-label">Chat Application</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========== END SLIDESHOW ========== -->
+
       <div class="scroll-container">
         <button class="scroll-button" onclick="scrollDown()" aria-label="Scroll down"></button>
       </div>
     </section>
-    
-    <!-- SKILL -->
-    <div class="heading">
-      <h1>SKILLS</h1>
-    </div>
+  </header>
+
+  <main>
     <section id="main">
-      
-      <div class="skills" >
+      <!-- SKILLS SECTION -->
+      <div class="heading">
+        <h1>SKILLS</h1>
+      </div>
+      <div class="skills">
         <div class="skill1">
           <div class="card">
             <div class="mac-header">
@@ -52,24 +201,28 @@
               <span class="yellow"></span>
               <span class="green"></span>
             </div>
-            <span class="card-title">Python</span>
+            <span class="card-title">Pandas (Python)</span>
             <p class="card-description">
               The code below has an error or is missing something. Click EDIT to fix it.
             </p>
             <div class="in-card" data-id="0">
-              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <button class="card-tag edit-btn">EDIT</button>
+              <button class="card-tag run-btn">RUN</button>
               <div class="code-editor">
-                <pre><code>def is_even(number):
-    if number % 2 = 0:
-        return True
-    else:
-        return False
-</code></pre>
+                <pre><code>import pandas as pd
+data = {
+    'Name': ['Alice', 'Bob', 'Cee'],
+    'Age': [21, 30, 25]
+}
+
+df = DataFrame(data)
+print(df)</code></pre>
               </div>
               <p class="feedback"></p>
             </div>
           </div>
         </div>
+
         <div class="skill2">
           <div class="card">
             <div class="mac-header">
@@ -77,22 +230,28 @@
               <span class="yellow"></span>
               <span class="green"></span>
             </div>
-            <span class="card-title">CSS</span>
+            <span class="card-title">Matplotlib (Python)</span>
             <p class="card-description">
               The code below has an error or is missing something. Click EDIT to fix it.
             </p>
             <div class="in-card" data-id="1">
-              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <button class="card-tag edit-btn">EDIT</button>
+              <button class="card-tag run-btn">RUN</button>
               <div class="code-editor">
-                <pre><code>body {
-    background-color: lightblue
-    font-family: Arial, sans-serif;
-}</code></pre>
+                <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 25, 30]
+
+np.plot(x, y)
+np.show()</code></pre>
               </div>
               <p class="feedback"></p>
             </div>
           </div>
         </div>
+
         <div class="skill3">
           <div class="card">
             <div class="mac-header">
@@ -105,16 +264,20 @@
               The code below has an error or is missing something. Click EDIT to fix it.
             </p>
             <div class="in-card" data-id="2">
-              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <button class="card-tag edit-btn">EDIT</button>
+              <button class="card-tag run-btn">RUN</button>
               <div class="code-editor">
-                <pre><code>SELECT first_name last_name
-FROM users
-WHERE country = 'South Africa';</code></pre>
+                <pre><code>CREATE TABLE Users (id INT, name VARCHAR(50), City VARCHAR(50));
+
+INSERT INTO Users (1, 'Alice', 'New York'), (2, 'Bob', 'London');
+
+SELECT * FROM Users;</code></pre>
               </div>
               <p class="feedback"></p>
             </div>
           </div>
         </div>
+
         <div class="skill4">
           <div class="card">
             <div class="mac-header">
@@ -122,16 +285,17 @@ WHERE country = 'South Africa';</code></pre>
               <span class="yellow"></span>
               <span class="green"></span>
             </div>
-            <span class="card-title">Javascript</span>
+            <span class="card-title">JavaScript</span>
             <p class="card-description">
               The code below has an error or is missing something. Click EDIT to fix it.
             </p>
             <div class="in-card" data-id="3">
-              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <button class="card-tag edit-btn">EDIT</button>
+              <button class="card-tag run-btn">RUN</button>
               <div class="code-editor">
                 <pre><code>function checkNumber(num) {
     if (num === 10) {
-        print "It's ten!";
+        print("It's ten!");
     } else {
         return "It's not ten.";
     }
@@ -141,6 +305,7 @@ WHERE country = 'South Africa';</code></pre>
             </div>
           </div>
         </div>
+
         <div class="skill5">
           <div class="card">
             <div class="mac-header">
@@ -148,24 +313,28 @@ WHERE country = 'South Africa';</code></pre>
               <span class="yellow"></span>
               <span class="green"></span>
             </div>
-            <span class="card-title">React(jsx)</span>
+            <span class="card-title">Numpy (Python)</span>
             <p class="card-description">
               The code below has an error or is missing something. Click EDIT to fix it.
             </p>
             <div class="in-card" data-id="4">
-              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <button class="card-tag edit-btn">EDIT</button>
+              <button class="card-tag run-btn">RUN</button>
               <div class="code-editor">
-                <pre><code>function WelcomeComponent() {
-    return (
-        &lt;h1&gt;Hello World&lt;/h1&gt;
-        &lt;p&gt;Welcome to the app.&lt;/p&gt;
-    );
-}</code></pre>
+                <pre><code>import numpy as np
+
+a = np.array([[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]])
+
+print(np.mean())
+print(np.sum())</code></pre>
               </div>
               <p class="feedback"></p>
             </div>
           </div>
         </div>
+
         <div class="skill6">
           <div class="card">
             <div class="mac-header">
@@ -173,31 +342,224 @@ WHERE country = 'South Africa';</code></pre>
               <span class="yellow"></span>
               <span class="green"></span>
             </div>
-            <span class="card-title">Javascript Code Preview</span>
-            <p class="card-description" >
+            <span class="card-title">Scikit (Python)</span>
+            <p class="card-description">
               The code below has an error or is missing something. Click EDIT to fix it.
             </p>
             <div class="in-card" data-id="5">
-              <button class="card-tag edit-btn">EDIT</button> <button class="card-tag run-btn">RUN</button>
+              <button class="card-tag edit-btn">EDIT</button>
+              <button class="card-tag run-btn">RUN</button>
               <div class="code-editor">
-                <pre><code>&lt;h1&gt; Hello World &lt;/h1&gt;</code></pre>
+                <pre><code>from sklearn.linear_model import LinearRegression
+import numpy as np
+
+X = np.array([[1], [2], [3], [4]])
+y = np.array([2, 4, 6, 8])
+
+model = Linear
+model.fit(X, y)
+
+print(model.predict([[5]]))</code></pre>
               </div>
               <p class="feedback"></p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="projects">
 
-    </section>
-    <section id="about">
+      <!-- Toggle Button Area -->
+      <div class="skills-toggle-wrapper">
+        <button id="toggle-skills-btn" class="toggle-btn">
+          View Other Skills <span class="arrow">▼</span>
+        </button>
+      </div>
 
-    </section>
-    <section>
+      <!-- Extra Skills Section -->
+      <div id="extra-skills-panel" class="extra-skills-panel">
+        <div class="extra-skills-grid">
+          <!-- Category: Tools -->
+          <div class="skill-category">
+            <h3>Tools & Tech</h3>
+            <div class="tags">
+              <span class="tag">Git & GitHub</span>
+              <span class="tag">Microsoft 365</span>
+              <span class="tag">Google Suite</span>
+              <span class="tag">Jira</span>
+              <span class="tag">RESTful APIs</span>
+              <span class="tag">Figma (UI/UX Design)</span>
+              <span class="tag">Canva</span>
+              <span class="tag">Power BI (Basics)</span>
+              <span class="tag">MongoDB (Beginner)</span>
+              <span class="tag">MySQL, PostgreSQL</span>
+            </div>
+          </div>
 
+          <!-- Category: Frameworks -->
+          <div class="skill-category">
+            <h3>Frameworks</h3>
+            <div class="tags">
+              <span class="tag">React.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Django</span>
+              <span class="tag">Openpyxl (automation)</span>
+              <span class="tag">tidyverse - R (Beginner)</span>
+            </div>
+          </div>
+
+          <!-- Category: Soft Skills -->
+          <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <div class="tags">
+              <span class="tag">Agile/Scrum</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">SDLC</span>
+              <span class="tag">Communication</span>
+              <span class="tag">Cross-Functional Collaboration</span>
+              <span class="tag">Creativity</span>
+              <span class="tag">Adaptability & Continuous Learning</span>
+              <span class="tag">Clean Code and Best Practice</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <!-- Certificates Button -->
+      <div class="certificates-toggle-wrapper">
+        <button id="certificates-btn" class="toggle-btn certificates-btn">
+          View Certificates <span class="arrow">▼</span>
+        </button>
+      </div>
+
+      <!-- Certificates Modal -->
+      <div class="certificates-modal" id="certificatesModal">
+        <button class="certificates-close" id="certificatesClose">&times;</button>
+        
+        <div class="certificates-header">
+          <h2 class="certificates-title">My Certificates</h2>
+          <p class="certificates-subtitle">Hover over a certificate to see details</p>
+        </div>
+        
+        <div class="certificates-grid">
+          <!-- Certificate 1 -->
+          <div class="certificate-card" data-index="0">
+            <div class="certificate-image">
+              <img src="images/certificates/cert1.jpg" alt="Web Development Certificate">
+            </div>
+            <div class="certificate-overlay">
+              <h3>Network Management</h3>
+              <p>Issued by: Chongqing Polytechnic University of Electronic Tech</p>
+              <p>Date: 2024</p>
+              <span class="certificate-click-hint">click to view</span>
+            </div>
+          </div>
+          
+          <!-- Certificate 2 -->
+          <div class="certificate-card" data-index="1">
+            <div class="certificate-image">
+              <img src="images/certificates/cert2.png" alt="Data Science Certificate">
+            </div>
+            <div class="certificate-overlay">
+              <h3>JavaScript Algorithms and Data Structures</h3>
+              <p>Issued by: FreeCodeCamp</p>
+              <p>Date: 2025</p>
+              <span class="certificate-click-hint">click to view</span>
+            </div>
+          </div>
+          
+          <!-- Certificate 3 -->
+          <div class="certificate-card" data-index="2">
+            <div class="certificate-image">
+              <img src="images/certificates/cert3.png" alt="Python Certificate">
+            </div>
+            <div class="certificate-overlay">
+              <h3>Effective Business Websites</h3>
+              <p>Issued by: HP Life</p>
+              <p>Date: 2025</p>
+              <span class="certificate-click-hint">click to view</span>
+            </div>
+          </div>
+          
+          <!-- Certificate 4 -->
+          <div class="certificate-card" data-index="3">
+            <div class="certificate-image">
+              <img src="images/certificates/cert4.png" alt="Machine Learning Certificate">
+            </div>
+            <div class="certificate-overlay">
+              <h3>Presenting Data</h3>
+              <p>Issued by: HP Life</p>
+              <p>Date: 2025</p>
+              <span class="certificate-click-hint">click to view</span>
+            </div>
+          </div>
+          
+          <!-- Certificate 5 -->
+          <div class="certificate-card" data-index="4">
+            <div class="certificate-image">
+              <img src="images/certificates/cert5.png" alt="SQL Certificate">
+            </div>
+            <div class="certificate-overlay">
+              <h3>IT for Business Success</h3>
+              <p>Issued by: HP Life</p>
+              <p>Date: 2025</p>
+              <span class="certificate-click-hint">click to view</span>
+            </div>
+          </div>
+          
+          <!-- Certificate 6 -->
+          <div class="certificate-card" data-index="5">
+            <div class="certificate-image">
+              <img src="images/certificates/cert6.png" alt="React Certificate">
+            </div>
+            <div class="certificate-overlay">
+              <h3>Pandas</h3>
+              <p>Issued by: Kaggle</p>
+              <p>Date: 2025</p>
+              <span class="certificate-click-hint">click to view</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Lightbox -->
+      <div class="certificate-lightbox" id="certificateLightbox">
+        <button class="certificate-lightbox-close" id="lightboxClose">&times;</button>
+        <button class="certificate-lightbox-nav certificate-lightbox-prev" id="lightboxPrev">&#8249;</button>
+        <button class="certificate-lightbox-nav certificate-lightbox-next" id="lightboxNext">&#8250;</button>
+        
+        <div class="certificate-lightbox-content">
+          <div class="certificate-lightbox-frame">
+            <div class="certificate-lightbox-image">
+              <img src="" alt="Certificate" id="lightboxImage">
+            </div>
+          </div>
+          
+          <div class="certificate-lightbox-details">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxIssuer"></p>
+            <p id="lightboxDate"></p>
+            <span class="certificate-badge">Verified</span>
+          </div>
+        </div>
+        
+        <span class="certificate-lightbox-counter">
+          <span id="lightboxCurrent">1</span> / <span id="lightboxTotal">6</span>
+        </span>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Fiston Kilele. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Saint-Fiston" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/fiston-kilele-345a5731b/" target="_blank">LinkedIn</a>
+        <a href="mailto:Kilelefiston7@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
   <script type="module" src="./src/main.js"></script>
 </body>
 </html>

@@ -5,30 +5,18 @@
 body {
   height: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #050505 0%, var(--purple) 100%, var(--black) 30%);
+  background: linear-gradient(to bottom, #050505 0%, var(--purple) 15%, var(--black) 55%);
   overflow-x: hidden;
   font-family: "Noto Sans", system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  /* Removed commented out min-height and fixed height value */
-  height: 100%;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #050505 0%, var(--purple) 9%, var(--black) 90%);
-  overflow-x: hidden;
-  font-family: "Noto Sans", system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================
    PROJECTS PAGE BASE
    ========================================== */
 .projects-page {
+  height: 100%;
   min-height: 100vh;
   padding-top: 12px;
 }
@@ -37,7 +25,7 @@ body {
    PROJECTS HERO SECTION
    ========================================== */
 .projects-hero {
-  padding: 60px var(--container-padding) 80px;
+  padding: 60px var(--container-padding) 50px;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
@@ -71,7 +59,113 @@ body {
   color: rgba(255, 255, 255, 0.6);
   font-size: 1.1rem;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 40px 0;
+}
+
+/* ==========================================
+   CATEGORY TOGGLE
+   ========================================== */
+.category-toggle {
+  display: inline-flex;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: transparent;
+  border: none;
+  border-radius: 40px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: 40px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.toggle-btn:hover::before {
+  opacity: 1;
+}
+
+.toggle-btn.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-btn.active::before {
+  opacity: 0;
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover .toggle-icon {
+  transform: scale(1.15);
+}
+
+.toggle-btn.active .toggle-icon {
+  transform: scale(1.1);
+}
+
+.toggle-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Active indicator animation */
+.toggle-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 30px;
+    opacity: 1;
+  }
 }
 
 /* ==========================================
@@ -81,6 +175,22 @@ body {
   padding: 40px var(--container-padding) 100px;
   max-width: 1300px;
   margin: 0 auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.projects-grid-section.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .projects-grid {
@@ -99,6 +209,23 @@ body {
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardFadeIn 0.6s ease forwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-card:hover {
@@ -172,6 +299,19 @@ body {
   padding: 25px;
 }
 
+.project-type {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+}
+
 .project-title {
   color: var(--white);
   font-size: 1.25rem;
@@ -214,36 +354,75 @@ body {
 }
 
 /* ==========================================
-   PROJECT DETAILS SECTION
+   PROJECT MODAL
    ========================================== */
-.project-details-section {
-  padding: 0 var(--container-padding);
-  max-width: 1300px;
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-close {
+  position: fixed;
+  top: 25px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.modal-close:focus {
+  outline: 2px solid var(--white);
+  outline-offset: 3px;
+}
+
+.modal-content {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 80px var(--container-padding) 60px;
+  transform: translateY(30px);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-detail {
-  display: none;
-  padding: 60px 0 100px;
-  animation: fadeInUp 0.5s ease forwards;
+.project-modal.active .modal-content {
+  transform: translateY(0);
 }
 
-.project-detail.active {
-  display: block;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.detail-header {
+/* ==========================================
+   MODAL HEADER
+   ========================================== */
+.modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -260,28 +439,33 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
+  border-radius: 30px;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .back-to-projects:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
   color: var(--white);
+  transform: translateX(-5px);
 }
 
 .project-number {
-  color: rgba(255, 255, 255, 0.15);
-  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 5rem;
   font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 1;
 }
 
-.detail-content {
+/* ==========================================
+   MODAL BODY
+   ========================================== */
+.modal-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -289,11 +473,11 @@ body {
 }
 
 /* ==========================================
-   PROJECT GALLERY
+   MODAL GALLERY
    ========================================== */
-.detail-gallery {
+.modal-gallery {
   position: sticky;
-  top: 120px;
+  top: 100px;
 }
 
 .gallery-main {
@@ -320,6 +504,7 @@ body {
 .gallery-thumbs {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .gallery-thumbs .thumb {
@@ -344,33 +529,51 @@ body {
 }
 
 /* ==========================================
-   PROJECT DETAIL INFO
+   MODAL INFO
    ========================================== */
-.detail-info {
+.modal-info {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
 }
 
-.detail-title {
+.modal-type {
+  display: inline-block;
+  align-self: flex-start;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+.modal-title {
   color: var(--white);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0;
+  line-height: 1.2;
 }
 
-.detail-description {
+.modal-description {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   line-height: 1.8;
   margin: 0;
 }
 
-.detail-meta {
+/* ==========================================
+   MODAL META
+   ========================================== */
+.modal-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
 }
 
 .meta-item {
@@ -378,17 +581,18 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 15px 20px;
-  min-width: 140px;
+  min-width: 130px;
+  flex: 1;
 }
 
 .meta-label {
   display: block;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .meta-value {
@@ -410,8 +614,11 @@ body {
   color: #fbbf24;
 }
 
-.detail-tech h4,
-.detail-features h4 {
+/* ==========================================
+   MODAL TECH & FEATURES
+   ========================================== */
+.modal-tech h4,
+.modal-features h4 {
   color: var(--white);
   font-size: 1rem;
   font-weight: 600;
@@ -438,6 +645,19 @@ body {
 .tech-badge:hover {
   background: rgba(99, 102, 241, 0.25);
   border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Data project tech badges - different color */
+.tech-badge.data {
+  background: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.tech-badge.data:hover {
+  background: rgba(34, 197, 94, 0.25);
+  border-color: rgba(34, 197, 94, 0.5);
 }
 
 .features-list {
@@ -453,7 +673,7 @@ body {
   position: relative;
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.92rem;
-  padding-left: 25px;
+  padding-left: 28px;
   line-height: 1.5;
 }
 
@@ -462,17 +682,23 @@ body {
   position: absolute;
   left: 0;
   color: #4ade80;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
-.detail-links {
+/* ==========================================
+   MODAL LINKS
+   ========================================== */
+.modal-links {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
-  padding-top: 10px;
+  padding-top: 15px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.detail-btn {
+.modal-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -483,44 +709,57 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
 
-.detail-btn svg {
-  width: 16px;
-  height: 16px;
+.modal-btn svg {
+  width: 18px;
+  height: 18px;
   transition: transform 0.3s ease;
 }
 
-.detail-btn:hover svg {
+.modal-btn:hover svg {
   transform: translateX(3px);
 }
 
-.detail-btn.primary {
+.modal-btn.primary {
   background: var(--white);
   color: var(--black);
-  border: none;
 }
 
-.detail-btn.primary:hover {
+.modal-btn.primary:hover {
   background: rgba(255, 255, 255, 0.9);
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
-.detail-btn.secondary {
+.modal-btn.secondary {
   background: rgba(255, 255, 255, 0.06);
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.detail-btn.secondary:hover {
+.modal-btn.secondary:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-3px);
 }
 
+/* Figma button for UI/UX projects */
+.modal-btn.figma {
+  background: rgba(162, 89, 255, 0.15);
+  color: #c4a5ff;
+  border: 1px solid rgba(162, 89, 255, 0.3);
+}
+
+.modal-btn.figma:hover {
+  background: rgba(162, 89, 255, 0.25);
+  border-color: rgba(162, 89, 255, 0.5);
+}
+
 /* ==========================================
-   FOOTER (Same as about page)
+   FOOTER
    ========================================== */
 .footer {
   padding: 40px var(--container-padding);
@@ -560,32 +799,10 @@ body {
 }
 
 /* ==========================================
-   LOADING STATE FOR IMAGES
+   BODY LOCK WHEN MODAL OPEN
    ========================================== */
-.project-image img,
-.gallery-main img {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.project-image img[src=""],
-.gallery-main img[src=""] {
-  visibility: hidden;
-}
-
-/* ==========================================
-   SCROLL BEHAVIOR
-   ========================================== */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Hide grid when viewing details */
-.projects-grid-section.hidden {
-  display: none;
-}
-
-.projects-hero.hidden {
-  display: none;
+body.modal-open {
+  overflow: hidden;
 }
 
 /* ==========================================
@@ -596,12 +813,12 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
   
-  .detail-content {
+  .modal-body {
     gap: 50px;
   }
   
   .project-number {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 }
 
@@ -609,12 +826,12 @@ html {
    RESPONSIVE - TABLET LANDSCAPE
    ========================================== */
 @media screen and (max-width: 1100px) {
-  .detail-content {
+  .modal-body {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
-  .detail-gallery {
+  .modal-gallery {
     position: relative;
     top: 0;
   }
@@ -642,7 +859,28 @@ html {
   }
   
   .projects-hero {
-    padding: 50px var(--container-padding) 60px;
+    padding: 50px var(--container-padding) 40px;
+  }
+  
+  .projects-subtitle {
+    margin-bottom: 30px;
+  }
+  
+  .category-toggle {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    padding: 6px;
+  }
+  
+  .toggle-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px;
+  }
+  
+  .toggle-btn.active::after {
+    display: none;
   }
   
   .projects-grid-section {
@@ -654,11 +892,11 @@ html {
     gap: 25px;
   }
   
-  .project-detail {
-    padding: 40px 0 80px;
+  .modal-content {
+    padding: 70px var(--container-padding) 50px;
   }
   
-  .detail-header {
+  .modal-header {
     margin-bottom: 35px;
     padding-bottom: 20px;
   }
@@ -667,26 +905,34 @@ html {
     font-size: 3rem;
   }
   
-  .detail-title {
+  .modal-title {
     font-size: 1.8rem;
   }
   
-  .detail-meta {
-    gap: 15px;
+  .modal-meta {
+    gap: 12px;
   }
   
   .meta-item {
     padding: 12px 16px;
-    min-width: 120px;
+    min-width: 110px;
+  }
+  
+  .modal-close {
+    top: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    font-size: 1.6rem;
   }
 }
 
 /* ==========================================
    RESPONSIVE - LARGE PHONE
    ========================================== */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 770px) {
   .projects-hero {
-    padding: 40px var(--container-padding) 50px;
+    padding: 40px var(--container-padding) 30px;
   }
   
   .projects-title {
@@ -695,10 +941,26 @@ html {
   
   .projects-subtitle {
     font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  
+  .category-toggle {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+  
+  .toggle-btn {
+    padding: 14px 20px;
+    font-size: 0.88rem;
+    border-radius: 20px;
+  }
+  
+  .toggle-icon {
+    font-size: 1.1rem;
   }
   
   .projects-grid-section {
-    padding: 20px var(--container-padding) 70px;
+    padding: 25px var(--container-padding) 70px;
   }
   
   .projects-grid {
@@ -712,6 +974,11 @@ html {
   
   .project-info {
     padding: 20px;
+  }
+  
+  .project-type {
+    font-size: 0.7rem;
+    padding: 3px 8px;
   }
   
   .project-title {
@@ -728,11 +995,11 @@ html {
     padding: 4px 10px;
   }
   
-  .project-detail {
-    padding: 30px 0 60px;
+  .modal-content {
+    padding: 60px var(--container-padding) 40px;
   }
   
-  .detail-header {
+  .modal-header {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 15px;
@@ -741,7 +1008,7 @@ html {
   
   .back-to-projects {
     font-size: 0.85rem;
-    padding: 8px 16px;
+    padding: 10px 18px;
   }
   
   .project-number {
@@ -749,18 +1016,27 @@ html {
     align-self: flex-end;
   }
   
-  .detail-title {
-    font-size: 1.6rem;
+  .modal-info {
+    gap: 20px;
   }
   
-  .detail-description {
+  .modal-type {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  .modal-description {
     font-size: 0.92rem;
     line-height: 1.7;
   }
   
-  .detail-meta {
+  .modal-meta {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
   
   .meta-item {
@@ -779,6 +1055,7 @@ html {
     gap: 8px;
     overflow-x: auto;
     padding-bottom: 5px;
+    flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
   }
   
@@ -788,6 +1065,12 @@ html {
     flex-shrink: 0;
   }
   
+  .modal-tech h4,
+  .modal-features h4 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  
   .tech-badge {
     font-size: 0.78rem;
     padding: 6px 12px;
@@ -795,14 +1078,14 @@ html {
   
   .features-list li {
     font-size: 0.88rem;
-    padding-left: 22px;
+    padding-left: 24px;
   }
   
-  .detail-links {
+  .modal-links {
     flex-direction: column;
   }
   
-  .detail-btn {
+  .modal-btn {
     width: 100%;
     justify-content: center;
     padding: 14px 24px;
@@ -811,6 +1094,14 @@ html {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+  
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
   }
 }
 
@@ -823,7 +1114,7 @@ html {
   }
   
   .projects-hero {
-    padding: 30px var(--container-padding) 40px;
+    padding: 30px var(--container-padding) 25px;
   }
   
   .projects-title {
@@ -834,8 +1125,24 @@ html {
     font-size: 0.9rem;
   }
   
+  .category-toggle {
+    padding: 5px;
+    border-radius: 16px;
+  }
+  
+  .toggle-btn {
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    border-radius: 12px;
+    gap: 8px;
+  }
+  
+  .toggle-icon {
+    font-size: 1rem;
+  }
+  
   .projects-grid-section {
-    padding: 15px var(--container-padding) 60px;
+    padding: 20px var(--container-padding) 60px;
   }
   
   .project-card {
@@ -843,38 +1150,32 @@ html {
   }
   
   .project-info {
-    padding: 18px;
+    padding: 16px;
   }
   
   .project-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
   
   .project-short-desc {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
   }
   
   .project-view-btn {
-    padding: 10px 22px;
+    padding: 10px 20px;
+    font-size: 0.82rem;
+  }
+  
+  .modal-content {
+    padding: 55px 15px 35px;
+  }
+  
+  .modal-title {
+    font-size: 1.35rem;
+  }
+  
+  .modal-description {
     font-size: 0.85rem;
-  }
-  
-  .detail-info {
-    gap: 25px;
-  }
-  
-  .detail-title {
-    font-size: 1.4rem;
-  }
-  
-  .detail-description {
-    font-size: 0.88rem;
-  }
-  
-  .detail-tech h4,
-  .detail-features h4 {
-    font-size: 0.95rem;
-    margin-bottom: 12px;
   }
   
   .tech-list {
@@ -891,8 +1192,8 @@ html {
   }
   
   .features-list li {
-    font-size: 0.85rem;
-    padding-left: 20px;
+    font-size: 0.82rem;
+    padding-left: 22px;
   }
   
   .gallery-main {
@@ -909,9 +1210,17 @@ html {
     font-size: 2rem;
   }
   
-  .detail-btn {
+  .modal-btn {
     font-size: 0.85rem;
     padding: 12px 20px;
+  }
+  
+  .modal-close {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
   }
 }
 
@@ -921,7 +1230,7 @@ html {
 @media (hover: none) and (pointer: coarse) {
   .project-overlay {
     opacity: 1;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
   }
   
   .project-view-btn {
@@ -943,12 +1252,24 @@ html {
     transform: scale(0.98);
   }
   
-  .detail-btn:hover {
+  .toggle-btn:hover::before {
+    opacity: 0;
+  }
+  
+  .toggle-btn:active {
+    transform: scale(0.97);
+  }
+  
+  .modal-btn:hover {
     transform: none;
   }
   
-  .detail-btn:active {
-    transform: scale(0.98);
+  .modal-btn:active {
+    transform: scale(0.97);
+  }
+  
+  .tech-badge:hover {
+    transform: none;
   }
 }
 
@@ -959,14 +1280,30 @@ html {
   .project-card,
   .project-image img,
   .project-view-btn,
-  .detail-btn,
+  .modal-btn,
   .gallery-main img,
-  .project-detail {
+  .project-modal,
+  .modal-content,
+  .toggle-btn,
+  .projects-grid-section {
     transition: none;
   }
   
-  .project-detail {
+  .project-card {
     animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .projects-grid-section {
+    animation: none;
+  }
+  
+  @keyframes slideIn {
+    from, to {
+      width: 30px;
+      opacity: 1;
+    }
   }
   
   html {
@@ -979,8 +1316,9 @@ html {
    ========================================== */
 .project-view-btn:focus,
 .back-to-projects:focus,
-.detail-btn:focus,
-.gallery-thumbs .thumb:focus {
+.modal-btn:focus,
+.gallery-thumbs .thumb:focus,
+.toggle-btn:focus {
   outline: 2px solid var(--white);
   outline-offset: 3px;
 }
@@ -989,14 +1327,20 @@ html {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+.toggle-btn:focus {
+  outline-offset: 2px;
+}
+
 /* ==========================================
    PRINT STYLES
    ========================================== */
 @media print {
   .projects-hero,
   .project-overlay,
-  .detail-links,
-  .footer {
+  .modal-links,
+  .footer,
+  .category-toggle,
+  .project-modal {
     display: none;
   }
   
@@ -1011,8 +1355,11 @@ html {
   }
   
   .project-title,
-  .detail-title {
+  .modal-title {
     color: black;
   }
+  
+  .projects-grid-section.hidden {
+    display: block;
+  }
 }
-

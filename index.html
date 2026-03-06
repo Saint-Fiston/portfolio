@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Fiston Kilele</title>
+  <style>
+    .slideshow-track {
+      display: flex;
+      gap: 25px;
+      width: max-content;
+      animation: slideLeft 25s linear infinite !important;
+    }
+    
+    @keyframes slideLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
 </head>
 <body>
   <!-- PAGE LOADER -->
@@ -72,113 +85,138 @@
         <h4>HI I'M <strong><a href="#about">FISTON</a></strong></h4>
         <h1 class="typewriter">
           <span class="text1">WELCOME</span>
-          <span class="text2">TO MY TECH</span>
-          <span class="text3">WORLD</span>
+          <span class="text2">TO MY WORLD</span>
+          <span class="text3">OF TECH</span>
         </h1>
         <p>
-          <span>Transforming data into decisions— combining the logic of a <strong>Data Scientist</strong> with the build-capabilities of a</span> 
-          <span><strong>Full-Stack Developer.</strong> Explore my dual-expertise in building robust apps and predictive models.</span>
+          <span>Frontend by passion, <strong>Python</strong> by obsession. I clean data, automate boring stuff,</span>
+          <span>and make websites look really good. Currently teaching machines to <strong>learn.</strong></span>
         </p>
       </div>
 
       <!-- ========== PROJECTS SLIDESHOW ========== -->
       <div class="slideshow-container">
         <div class="slideshow-track">
-          <!-- Slide 1 -->
+          
+          <!-- ===== ORIGINAL SLIDES ===== -->
           <div class="slide-item">
             <div class="slide-frame">
-              <a href="projects.html#hotel-booking-details">
-                <img src="images2/hotel.png" alt="HOTEL BOOKING SYSTEM">
-                <div class="slide-label">HOTEL BOOKING SYSTEM</div>
+              <a href="projects.html#hotel-booking">
+                <img src="./images2/Hotel.png" alt="Hotel Booking System">
+                <div class="slide-label">Hotel Booking System</div>
               </a>
-              
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="slide-item">
-            <div class="slide-frame">
-              <a href="projects.html#aea-details">
-                <img src="images2/afri.png" alt="AEA">
-                <div class="slide-label">AEA</div>
-              </a>
-            </div>
-          </div>
-          <!-- Slide 3 -->
-          <div class="slide-item">
-            <div class="slide-frame">
-              <a href="">
-                <img src="images2/prof.png" alt="PORTFOLIO">
-                <div class="slide-label">PORTFOLIO</div>
-              </a>
-              
-            </div>
-          </div>
-          <!-- Slide 4 -->
-          <div class="slide-item">
-            <div class="slide-frame">
-              <a href="projects.html#streaming-details">
-                <img src="images2/webrtc2.png" alt="LIVE WEB STREAMING FEATURE">
-                <div class="slide-label">LIVE STREAMING FEATURE</div>
-              </a>
-              
-            </div>
-          </div>
-          <!-- Slide 5 -->
-          <div class="slide-item">
-            <div class="slide-frame">
-              <a href="projects.html#excel-details">
-                <img src="images2/excel2.png" alt="EXCEL AUTOMATION">
-                <div class="slide-label">EXCEL AUTOMATION</div>
-              </a>
-            </div>
-          </div>
-          <!-- Slide 6 -->
-          <div class="slide-item">
-            <div class="slide-frame">
-              <img src="images2/project6.jpg" alt="Chat Application">
-              <div class="slide-label">Chat Application</div>
             </div>
           </div>
           
-          <!-- Duplicate slides for seamless infinite loop -->
           <div class="slide-item">
             <div class="slide-frame">
-              <img src="images2/project1.jpg" alt="E-Commerce App">
-              <div class="slide-label">E-Commerce App</div>
+              <a href="projects.html#aea">
+                <img src="./images2/afri.png" alt="African Estate Agency">
+                <div class="slide-label">African Estate Agency</div>
+              </a>
             </div>
           </div>
+          
           <div class="slide-item">
             <div class="slide-frame">
-              <img src="images2/project2.jpg" alt="Portfolio Site">
-              <div class="slide-label">Portfolio Site</div>
+              <a href="projects.html#portfolio">
+                <img src="./images2/prof.png" alt="Portfolio">
+                <div class="slide-label">Portfolio</div>
+              </a>
             </div>
           </div>
+          
           <div class="slide-item">
             <div class="slide-frame">
-              <img src="images2/project3.jpg" alt="Task Manager">
-              <div class="slide-label">Task Manager</div>
+              <a href="projects.html#live-streaming">
+                <img src="./images2/webrtc2.png" alt="Live Streaming Feature">
+                <div class="slide-label">Live Streaming Feature</div>
+              </a>
             </div>
           </div>
+          
           <div class="slide-item">
             <div class="slide-frame">
-              <img src="images2/project4.jpg" alt="Weather App">
-              <div class="slide-label">Weather App</div>
+              <a href="projects.html#Amazon%20data%20cleaning%20(real-world%20data)">
+                <img src="./images2/amazon1.gif" alt="Excel Automation">
+                <div class="slide-label">Amazon data cleaning (RWD)</div>
+              </a>
             </div>
           </div>
+          
           <div class="slide-item">
             <div class="slide-frame">
-              <img src="images2/project5.jpg" alt="Fitness Tracker">
-              <div class="slide-label">Fitness Tracker</div>
+              <a href="projects.html#Automated%20Real%20Estate%20Valuation%20Model">
+                <img src="./images2/prop24.jpeg" alt="AREVM">
+                <div class="slide-label">AREVM</div>
+              </a>
             </div>
           </div>
+          
+          <!-- ===== DUPLICATE SLIDES (EXACT COPIES) ===== -->
           <div class="slide-item">
             <div class="slide-frame">
-              <img src="images2/project6.jpg" alt="Chat Application">
-              <div class="slide-label">Chat Application</div>
+              <a href="projects.html#hotel-booking">
+                <img src="./images2/hotel.png" alt="Hotel Booking System">
+                <div class="slide-label">Hotel Booking System</div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#hotel-booking">
+                <img src="./images2/Hotel.png" alt="Hotel Booking System">
+                <div class="slide-label">Hotel Booking System</div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#aea">
+                <img src="./images2/afri.png" alt="African Estate Agency">
+                <div class="slide-label">African Estate Agency</div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#portfolio">
+                <img src="./images2/prof.png" alt="Portfolio">
+                <div class="slide-label">Portfolio</div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#live-streaming">
+                <img src="./images2/webrtc2.png" alt="Live Streaming Feature">
+                <div class="slide-label">Live Streaming Feature</div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#Amazon">
+                <img src="./images2/amazon1.gif" alt="Excel Automation">
+                <div class="slide-label">Amazon data cleaning (RWD)</div>
+              </a>
+            </div>
+          </div>
+          
+          <div class="slide-item">
+            <div class="slide-frame">
+              <a href="projects.html#Automated%20Real%20Estate%20Valuation%20Model">
+                <img src="./images2/prop24.jpeg" alt="AREVM">
+                <div class="slide-label">AREVM</div>
+              </a>
             </div>
           </div>
         </div>
-      </div>
       <!-- ========== END SLIDESHOW ========== -->
 
       <div class="scroll-container">

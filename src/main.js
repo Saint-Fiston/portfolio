@@ -183,7 +183,6 @@ print(model.predict([[5]]))`
     let textarea = null;
 
     if (editBtn && runBtn && codeEditor) {
-      // Edit button
       editBtn.addEventListener("click", () => {
         const codeBlock = codeEditor.querySelector("code");
         if (codeBlock && !textarea) {
@@ -196,7 +195,6 @@ print(model.predict([[5]]))`
         }
       });
 
-      // Run button
       runBtn.addEventListener("click", () => {
         if (textarea) {
           const newCode = textarea.value.trim();
@@ -239,10 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (!navbar) return;
 
-  // Check if hamburger already exists to avoid duplicates
   if (document.querySelector('.hamburger')) return;
 
-  // Create hamburger button
+  // hamburger button
   const hamburger = document.createElement('button');
   hamburger.className = 'hamburger';
   hamburger.setAttribute('aria-label', 'Toggle navigation menu');
@@ -253,28 +250,26 @@ document.addEventListener('DOMContentLoaded', () => {
     <span class="hamburger-line"></span>
   `;
 
-  // Create overlay
+  // overlay
   const overlay = document.createElement('div');
   overlay.className = 'nav-overlay';
 
-  // Create mobile nav
+  // mobile nav
   const mobileNav = document.createElement('nav');
   mobileNav.className = 'mobile-nav';
   mobileNav.setAttribute('aria-label', 'Mobile navigation');
 
-  // Create close button
+  // close button
   const closeBtn = document.createElement('button');
   closeBtn.className = 'mobile-nav-close';
   closeBtn.setAttribute('aria-label', 'Close navigation menu');
   closeBtn.innerHTML = '&times;';
 
-  // Clone nav items if they exist
   let mobileNavItems;
   if (navItems) {
     mobileNavItems = navItems.cloneNode(true);
     mobileNavItems.className = 'mobile-nav-items';
   } else {
-    // Fallback: create mobile nav items from existing links in header
     mobileNavItems = document.createElement('ul');
     mobileNavItems.className = 'mobile-nav-items';
     const links = [
@@ -301,12 +296,10 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileNav.appendChild(closeBtn);
   mobileNav.appendChild(mobileNavItems);
 
-  // Append to DOM
   navbar.appendChild(hamburger);
   document.body.appendChild(overlay);
   document.body.appendChild(mobileNav);
 
-  // Toggle menu function
   const toggleMenu = (forceClose = null) => {
     const shouldOpen = forceClose === null 
       ? !mobileNav.classList.contains('active') 
@@ -375,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
   }
 
-  // Smooth scroll for anchor links
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -412,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Hide scroll button after scrolling
+  // Hide scroll button 
   const scrollContainer = document.querySelector('.scroll-container');
   if (scrollContainer) {
     window.addEventListener('scroll', () => {
@@ -681,10 +674,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (Math.abs(diff) > swipeThreshold) {
       if (diff > 0) {
-        // Swiped left - next
+        // left - next
         nextCertificate();
       } else {
-        // Swiped right - previous
+        // right - previous
         prevCertificate();
       }
     }

@@ -437,7 +437,7 @@ strong {
 }
 
 /* ==========================================
-   SLIDESHOW - CLEAN, NO SHADOWS
+   SLIDESHOW - FIXED VERSION
    ========================================== */
 .slideshow-container {
   width: 100%;
@@ -450,8 +450,8 @@ strong {
 .slideshow-track {
   display: flex;
   gap: 25px;
-  animation: slideLeft 25s linear infinite;
   width: max-content;
+  animation: slideLeft 25s linear infinite;
 }
 
 .slideshow-track:hover {
@@ -459,8 +459,12 @@ strong {
 }
 
 @keyframes slideLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .slide-item {
@@ -472,13 +476,13 @@ strong {
   width: 300px;
   height: 188px;
   padding: 7px;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
@@ -487,13 +491,20 @@ strong {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
+.slide-frame a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
 .slide-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
   display: block;
-  transition: transform var(--transition-normal);
+  transition: transform 0.3s ease;
 }
 
 .slide-frame:hover img {
@@ -510,19 +521,64 @@ strong {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 7px;
-  color: var(--white);
+  color: #ffffff;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-align: center;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
 }
 
 .slide-frame:hover .slide-label {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ==========================================
+   SLIDESHOW RESPONSIVE
+   ========================================== */
+@media screen and (max-width: 768px) {
+  .slideshow-track {
+    gap: 20px;
+    animation-duration: 20s;
+  }
+  
+  .slide-frame {
+    width: 260px;
+    height: 163px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slideshow-track {
+    gap: 15px;
+    animation-duration: 18s;
+  }
+  
+  .slide-frame {
+    width: 220px;
+    height: 138px;
+  }
+  
+  .slide-label {
+    font-size: 0.65rem;
+    padding: 7px 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .slideshow-track {
+    animation: none;
+  }
 }
 
 /* ==========================================

@@ -1,7 +1,7 @@
 
 body {
   min-height: 100vh;
-  height: 945vh;
+  height: 100%;
   background: linear-gradient(to bottom, #050505 0%, var(--purple) 3%, var(--black) 27%);
   overflow-x: hidden;
   font-family: "Noto Sans", system-ui, -apple-system, sans-serif;
@@ -349,11 +349,11 @@ body {
 
 .timeline-marker {
   position: absolute;
-  left: -40px;
+  left: -46px;
   top: 0;
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgb(25, 24, 24);
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
@@ -364,7 +364,7 @@ body {
 }
 
 .timeline-item:hover .timeline-marker {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(25, 24, 24);
   border-color: rgba(255, 255, 255, 0.4);
   transform: scale(1.1);
 }
@@ -1505,7 +1505,7 @@ body {
 /* ==========================================
    RESPONSIVE - LARGE PHONE
    ========================================== */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 770px) {
   .about-hero {
     padding: 40px var(--container-padding) 70px;
   }
@@ -1594,9 +1594,9 @@ body {
   }
   
   .timeline-marker {
-    left: -25px;
-    width: 35px;
-    height: 35px;
+    left: -34px;
+    width: 41px;
+    height: 41px;
   }
   
   .timeline-icon {
@@ -1759,6 +1759,12 @@ body {
   .timeline-tags .tag {
     font-size: 0.7rem;
     padding: 4px 10px;
+  }
+
+  .timeline-marker {
+    left: -34px;
+    width: 35px;
+    height: 35px;
   }
   
   .modules-grid {
